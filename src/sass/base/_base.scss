@@ -1,0 +1,36 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: var(--main-text-color);
+  background-color: var(--primary-bg-color);
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  @include mq(desktop) {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+.grid-item {
+  flex-basis: calc(100% - (var(--indent) * (var(--items) - 1))) / var(--items);
+}

@@ -1,0 +1,129 @@
+/* Стили для секции */
+.problems {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  background-image: linear-gradient(var(--title-color) 77%, var(--title-color-white) 23%);
+
+  @include mq(tablet) {
+    padding-top: 60px;
+    padding-bottom: 25px;
+    background-image: linear-gradient(var(--title-color) 340px, var(--title-color-white) 303px);
+  }
+
+  // SVG///////////
+  @include mq(desktop) {
+    padding-top: 100px;
+    padding-bottom: 65px;
+
+    background-image: url(../images/problems/icon-problems.svg),
+      linear-gradient(var(--title-color) 560px, var(--title-color-white) 150px);
+    background-repeat: no-repeat;
+    background-size: 455px 472px, 100% 100%;
+    background-position: left calc(50% + 655px) top 88px, center;
+  }
+}
+
+// Заголовок
+.problems__title {
+  margin-bottom: 25px;
+
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  color: var(--title-color-white);
+
+  @include mq(tablet) {
+    width: 568px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 70px;
+    width: 866px;
+
+    font-size: 46px;
+  }
+
+  // Оранжевая подсветка выделенных элементов////////
+  &--accent {
+    color: var(--accent-color);
+  }
+}
+
+// Список элементов
+.problems__list {
+  counter-reset: problems__item;
+
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+
+  display: grid;
+  gap: 15px;
+
+  background-color: var(--title-color-white);
+  box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+
+  @include mq(tablet) {
+    padding-top: 26px;
+    padding-right: 47px;
+    padding-bottom: 55px;
+    padding-left: 96px;
+
+    align-items: stretch;
+    grid-template-columns: auto auto;
+    gap: 22px 32px;
+  }
+
+  @include mq(desktop) {
+    padding-top: 70px;
+    padding-right: 112px;
+    padding-bottom: 62px;
+    padding-left: 114px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 64px 40px;
+  }
+}
+
+.problems__item::before {
+  content: '— 0' counter(problems__item);
+  counter-increment: problems__item;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+
+  @include mq(desktop) {
+    line-height: 1.7;
+  }
+}
+
+.problems__text {
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  color: var(--secondary-bg-color);
+  margin-top: 5px;
+
+  @include mq(tablet) {
+    line-height: 1.2;
+  }
+
+  @include mq(desktop) {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+}
+
+.problems__text:not(:first-child) {
+  margin-top: 5px;
+}

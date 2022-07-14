@@ -1,0 +1,110 @@
+.advantages {
+  padding-top: 0;
+  padding-bottom: 45px;
+
+  @include mq(tablet) {
+    padding-top: 48px;
+    padding-bottom: 45px;
+  }
+
+  @include mq(desktop) {
+    padding-top: 97px;
+    padding-bottom: 130px;
+  }
+}
+
+.advantages__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include mq(tablet) {
+    flex-direction: row;
+    gap: 21px;
+  }
+}
+
+.advantages__item {
+  display: flex;
+  position: relative;
+  min-height: 60px;
+  vertical-align: middle;
+  align-items: center;
+  width: 200px;
+
+  @include mq(mobile-only) {
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+  }
+
+  @include mq(desktop) {
+    width: 448px;
+    height: 102px;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include mq(desktop) {
+      width: 100px;
+      height: 102px;
+    }
+  }
+}
+
+.list__icon-1 {
+  &::before {
+    background-image: url(../images/advantages_svg/advantages_icon1.svg);
+
+    @include mq(desktop) {
+      background-image: url(../images/advantages_svg/advantages_icon1_lg.svg);
+    }
+  }
+}
+
+.list__icon-2 {
+  &::before {
+    background-image: url(../images/advantages_svg/advantages_icon2.svg);
+
+    @include mq(desktop) {
+      background-image: url(../images/advantages_svg/advantages_icon2_lg.svg);
+    }
+  }
+}
+
+.list__icon-3 {
+  &::before {
+    background-image: url(../images/advantages_svg/advantages_icon3.svg);
+
+    @include mq(desktop) {
+      background-image: url(../images/advantages_svg/advantages_icon3_lg.svg);
+    }
+  }
+}
+
+.advantages__title {
+  position: absolute;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.65;
+  padding-left: 68px;
+  color: var(--secondary-bg-color);
+
+  @include mq(desktop) {
+    padding-left: 84px;
+    font-size: 20px;
+    width: 300px;
+  }
+}
